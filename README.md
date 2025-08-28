@@ -6,11 +6,11 @@ https://karpov.courses/ml-start
 
 # Introduction
 
-It's the web service to get recommendations for users in social network.
+It's the web service to get post recommendations for users in social network.
 Retrieving data from tables User, Posts and Feed, the list of top recommended posts per selected user can be obtained 
 by http request.
 
-This service relies on gradient boosting model (Catboost) for making recommendations. 
+This service relies on a gradient boosting model (Catboost) to make recommendations. 
 
 ---
 
@@ -67,7 +67,7 @@ Activation using `uvicorn app:app --port 8000`, or using another port. Example o
 http://startmlboostrecommend-production.up.railway.app/post/recommendations/?id=121245&time=2021-01-06 12:41:55
 
 File **learn_model.py** contains classes and functions for Catboost gradient boosting model training, including datasets 
-preparations. That's all is used in **main_script.py**.
+preparations. That all is used in **main_script.py**.
 
 Module **get_model.py** is only aimed for .cbm file downloading on remote or locally.
 
