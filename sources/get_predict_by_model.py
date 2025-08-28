@@ -11,7 +11,7 @@ def get_model_path(path: str) -> str:
     return MODEL_PATH
 
 def load_models():
-    model_path = get_model_path("catboost_model_final_proj")
+    model_path = get_model_path(os.getenv(('MODEL_NAME')))
     model = CatBoostClassifier()
     model.load_model(model_path)
     return model
