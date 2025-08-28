@@ -49,7 +49,7 @@ like actions.
 **Python ver. 3.12**
 
 - There is a dockerfile and .dockerignore inside the project, which are aimed for server operation. Docker version 
-is supposed for web service demonstration at https://startmlboostrecommend-production.up.railway.app/, where you can 
+is supposed for web service demonstration at https://startmlboostingrecommend-production.up.railway.app/, where you can 
 try to send query and receive a response.
 
 The **main_script.py** contains all feature preparation functions and calls, you can launch it cnd check process. 
@@ -64,7 +64,7 @@ The **app.py** is used for web service operation. At initialization the master d
 post features dataframes preparation. In `/post/recommendations/` endpoint user features ore being prepared by user_id, 
 timestamp, preloaded dataframes, and list of predictions is being made, with sorting and getting the most relevant ones. 
 Activation using `uvicorn app:app --port 8000`, or using another port. Example of http query (GET method): 
-http://startmlboostrecommend-production.up.railway.app/post/recommendations/?id=121245&time=2021-01-06 12:41:55
+http://startmlboostingrecommend-production.up.railway.app/post/recommendations/?id=121245&time=2021-01-06 12:41:55
 
 File **learn_model.py** contains classes and functions for Catboost gradient boosting model training, including datasets 
 preparations. That all is used in **main_script.py**.
