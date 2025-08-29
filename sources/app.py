@@ -131,6 +131,11 @@ def get_post_feed(id: int, limit: int = 10, db: Session = Depends(get_db)):
 
     return db.query(Feed).filter(Feed.post_id == id).order_by(desc(Feed.time)).limit(limit).all()
 
+@app.get("/")
+def ping():
+
+    return "The gradient boosting based recommendation service is active"
+
 @app.get("/post/recommendations/", response_model=List[PostGet])
 def recommended_posts(id: int, time: datetime, limit: int = 5) -> List[PostGet]:
 
