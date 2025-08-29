@@ -10,7 +10,11 @@ It's the web service to get post recommendations for users in social network.
 Retrieving data from tables User, Posts and Feed, the list of top recommended posts per selected user can be obtained 
 by http request.
 
-This service relies on a gradient boosting model (Catboost) to make recommendations. 
+This service relies on a gradient boosting model (Catboost) to make recommendations. All features for post and user are 
+being processed and merged with Feed_data to get vectors for learning with targets, designated is this user going to 
+like post or not. Then gradient boosting model trains at 1M lines length dataset. During query user features are being
+taken for selected user and timestamp, then concatenated with posts features for predictions. Top of predicted like
+probabilities gives the recommended posts.
 
 ---
 
